@@ -1,0 +1,2 @@
+F:\代码\SeqList\Debug\SeqList.exe
+F:\代码\SeqList\Debug\SeqList.pdb
