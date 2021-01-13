@@ -11,7 +11,7 @@ void SeqListInit(SeqList* ps)
 		exit(-1);//结束
 	}
 	ps->size = 0;
-	ps->capacity = 4;
+	ps->capacity = 10;
 }
 void SeqListCheckCapacity(SeqList* ps)
 {
@@ -67,21 +67,27 @@ void SeqListPopFront(struct SeqList* ps)//头删
 void SeqListInsert(struct SeqList* ps, int pos, SLDataType x)//结构体，位置，数据
 {
 	assert(ps);
+	assert(pos < ps->size);
+	assert(pos > 0);
 	SeqListCheckCapacity(ps);
-	for (int end = ps->size ; end > pos; end--)
+	int end = ps->size - 1;
+	while (pos <= end)
 	{
 		ps->a[end] = ps->a[end - 1];
-		
+		--end;
 	}
-	ps->a[pos] = ps->a[x];
+	ps->a[pos] = x;
 	ps->size++;
 }
 void SeqListErase(struct SeqList* ps, int pos)
 {
 	assert(ps);
-	for (int start = pos; start < ps->size; start++)
+	assert(pos >= 0 && pos < ps->size);
+	int start = pos;
+	while (start < ps->size-1)
 	{
 		ps->a[start] = ps->a[start + 1];
+		++start;
 	}
 	ps->size--;
 }

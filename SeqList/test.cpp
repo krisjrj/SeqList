@@ -7,9 +7,16 @@ void TestSeqList1()
 	SeqListPushBack(&s, 1);
 	SeqListPushBack(&s, 2);
 	SeqListPushBack(&s, 3);
+	SeqListPushBack(&s, 4);
+	SeqListPushBack(&s, 5);
+	SeqListPushBack(&s, 6);
+	SeqListPushBack(&s, 7);
+	SeqListPushBack(&s, 8);
+	SeqListPushBack(&s, 9);
 	SeqListprint(&s);
 
-	/*SeqListPopBack(&s);
+	SeqListPopBack(&s);
+	SeqListPopBack(&s);
 	SeqListPopBack(&s);
 	SeqListprint(&s);
 
@@ -21,11 +28,11 @@ void TestSeqList1()
 	SeqListPopFront(&s);
 	SeqListPopFront(&s);
 	SeqListPopFront(&s);
-	SeqListprint(&s);*/
-
-	SeqListInsert(&s, 2, 4);
 	SeqListprint(&s);
-	SeqListErase(&s, 1);
+
+	SeqListInsert(&s, 2, 8);
+	SeqListprint(&s);
+	SeqListErase(&s, 4);
 	SeqListprint(&s);
 }
 
