@@ -1,0 +1,6 @@
+﻿  SList.c
+E:\新\代码仓库\SeqList\list\Slist.h(17,39): warning C4030: 第一个形参表比第二个长
+  test.c
+E:\新\代码仓库\SeqList\list\SList.h(17,39): warning C4030: 第一个形参表比第二个长
+  正在生成代码...
+  list.vcxproj -> E:\新\代码仓库\SeqList\list\Debug\list.exe

@@ -1,0 +1,2 @@
+E:\新\代码仓库\SeqList\list\Debug\list.exe
+E:\新\代码仓库\SeqList\list\Debug\list.pdb
