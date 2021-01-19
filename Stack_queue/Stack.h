@@ -20,7 +20,7 @@ void StackPush(Stack* pst,STDateTpye x);
 void StackPop(Stack* pst);
 //获取数据个数
 int StackSize(Stack st);
-//返回1是空，返回0飞空
+//返回1是空，返回0非空
 int StackEmpty(Stack* pst);
 //获取栈顶数据
 STDateTpye StackTop(Stack* pst);
