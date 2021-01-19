@@ -14,9 +14,7 @@ void StackDestory(Stack* pst)
 	assert(pst);
 	free(pst->_a);
 	pst->_a = NULL;
-	pst->_top = 0;
-	pst->_capacity = 0;
-
+	pst->_top = pst->_capacity = 0;
 }
 //入栈
 void StackPush(Stack* pst,STDateTpye x)
@@ -26,16 +24,16 @@ void StackPush(Stack* pst,STDateTpye x)
 	if (pst->_top == pst->_capacity)
 	{
 		pst->_capacity *= 2;
-	}
-	STDateTpye* tmp = (STDateTpye)realloc(pst->_a, sizeof((STDateTpye*)pst->_capacity));
-	if (tmp == NULL)
-	{
-		printf("内存申请失败");
-		exit(-1);
-	}
-	else
-	{
-		pst->_a = tmp;
+		STDateTpye* tmp = (STDateTpye*)realloc(pst->_a, sizeof((STDateTpye*)pst->_capacity));
+		if (tmp == NULL)
+		{
+			printf("内存申请失败");
+			exit(-1);
+		}
+		else
+		{
+			pst->_a = tmp;
+		}
 	}
 	//入栈
 	pst->_a[pst->_top] = x;
@@ -46,7 +44,7 @@ void StackPop(Stack* pst)
 {
 	assert(pst);
 	assert(pst->_top > 0);
-	pst->_top--;
+	--pst->_top;
 }
 //获取数据个数
 int StackSize(Stack* pst)
