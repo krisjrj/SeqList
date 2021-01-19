@@ -1,0 +1,2 @@
+E:\新\仓库\SeqList\Stack_queue\Debug\Stack_queue.exe
+E:\新\仓库\SeqList\Stack_queue\Debug\Stack_queue.pdb
