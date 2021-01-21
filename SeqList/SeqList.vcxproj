@@ -142,6 +142,7 @@
     <ClInclude Include="SeqList.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="leetcode.c" />
     <ClCompile Include="SeqList.cpp" />
     <ClCompile Include="test.cpp" />
   </ItemGroup>
