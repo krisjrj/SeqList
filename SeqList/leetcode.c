@@ -53,7 +53,7 @@ int* addToArrayForm(int* A, int ASize, int K, int* returnSize) {
     //ÄæÖÃ
     int right = reti - 1;
     int left = 0;
-    if (left < right)
+    while (left < right)
     {
         int tmp = retArr[left];
         retArr[left] = retArr[right];
@@ -63,13 +63,4 @@ int* addToArrayForm(int* A, int ASize, int K, int* returnSize) {
     }
     *returnSize = reti;
     return retArr;
-}
-int main()
-{
-    int A[] = { 1, 2, 0, 0 };
-    int ASize = 4;
-    int K = 34;
-    int* returnSize=
-    addToArrayForm(*A, ASize, K, int* returnSize);
-    return 0;
 }
