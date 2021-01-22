@@ -64,3 +64,63 @@ int* addToArrayForm(int* A, int ASize, int K, int* returnSize) {
     *returnSize = reti;
     return retArr;
 }
+//最小K个数
+//设计一个算法，找出数组中最小的k个数。以任意顺序返回这k个数均可
+/**
+ * Note: The returned array must be malloced, assume caller calls free().
+ */
+void Adjustdown(int* a, int n, int root)
+{
+    int parent = root;
+    int child = parent * 2 + 1;
+    while (child < n)
+    {
+        //判断是否存在右孩子
+        if (child + 1 < n && a[child + 1] > a[child])
+        {
+            ++child;
+        }
+        if (a[child] > a[parent])
+        {
+            //交换
+            int tmp = a[parent];
+            a[parent] = a[child];
+            a[child] = tmp;
+            //向下传
+            parent = child;
+            child = parent * 2 + 1;
+        }
+        else
+        {
+            break;
+        }
+    }
+}
+int* smallestK(int* arr, int arrSize, int k, int* returnSize) {
+    *returnSize = k;
+    int* retArr = (int*)malloc(sizeof(int) * k);
+    if (k == 0)
+    {
+        return retArr;
+    }
+    for (int i = 0; i < k; ++i)
+    {
+        retArr[i] = arr[i];
+    }
+    //建K个数的大堆
+    //k-1是最后一个节点下标，(k-1-1)/2为该节点父节点的下标
+    for (int i = (k - 1 - 1) / 2; i >= 0; --i)
+    {
+        Adjustdown(retArr, k, i);
+    }
+    for (int j = k; j < arrSize; j++)
+    {
+        if (arr[j] < retArr[0])
+        {
+            retArr[0] = arr[j];
+            Adjustdown(retArr, k, 0);
+        }
+    }
+
+    return retArr;
+}
