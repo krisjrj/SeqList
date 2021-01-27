@@ -79,3 +79,26 @@ bool isSameTree(struct TreeNode* p, struct TreeNode* q) {
         return isSameTree(p->left, q->left) && isSameTree(p->right, q->right);
 
 }
+//另一个树的子树
+bool isSametree(struct TreeNode* root_1, struct TreeNode* root_2)
+{
+    if (root_1 == NULL && root_2 == NULL)
+        return true;
+    if (root_1 == NULL && root_2 != NULL)
+        return false;
+    if (root_1 != NULL && root_2 == NULL)
+        return false;
+    if (root_1->val != root_2->val)
+        return false;
+    else
+        return isSametree(root_1->left, root_2->left) && isSametree(root_1->right, root_2->right);
+}
+bool isSubtree(struct TreeNode* s, struct TreeNode* t) {
+    if (s == NULL)
+        return false;
+    if (isSametree(s, t))
+        return true;
+    else
+        return isSubtree(s->left, t) || isSubtree(s->right, t);
+
+}
